@@ -1,4 +1,4 @@
-# Compiling the patched Flutter engine for Flutter stable_1_22_6
+# Compiling the patched Flutter engine for Flutter stable_1_22_6 for iOS
 
 ## Prepare the source code
 
