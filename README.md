@@ -1,6 +1,6 @@
 # Whats this?
 
-This is a description of how to compile the Flutter Engine for Flutter Release 1.22.6 (Stable).
+This is a description of how to compile the Flutter Engine for Flutter Release 1.22.6 (Stable) with a bugfix that prevents executing code on the GPU if the app is in background mode.
 This version of the engine potentially resolves the following issues (not yet confirmed):
 - https://github.com/flutter/flutter/issues/76068
 - https://github.com/flutter/flutter/issues/74226
