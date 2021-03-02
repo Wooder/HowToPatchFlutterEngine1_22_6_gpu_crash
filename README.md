@@ -9,6 +9,9 @@ This version of the engine potentially resolves the following issues (not yet co
 There is a merge request that fixes the problem on the master branch (https://github.com/flutter/engine/pull/24503).
 I transferred this fix manually for the flutter engine for 1.22.6
 
+The changes I made (2 commits on Mar 2, 2021) can be seen here:
+https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_gpu_disable_sync_switch_via_appstate_fix
+
 # Compiling the patched Flutter engine for Flutter stable_1_22_6 for iOS
 
 ## Prepare the source code
