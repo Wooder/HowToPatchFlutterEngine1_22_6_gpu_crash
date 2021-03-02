@@ -1,3 +1,14 @@
+# Whats this?
+
+This is a description of how to compile the Flutter Engine for Flutter Release 1.22.6 (Stable).
+This version of the engine potentially resolves the following issues (not yet confirmed):
+- https://github.com/flutter/flutter/issues/76068
+- https://github.com/flutter/flutter/issues/74226
+- https://github.com/flutter/flutter/issues/69102
+
+There is a merge request that fixes the problem on the master branch (https://github.com/flutter/engine/pull/24503).
+I transferred this fix manually for the flutter engine for 1.22.6
+
 # Compiling the patched Flutter engine for Flutter stable_1_22_6 for iOS
 
 ## Prepare the source code
