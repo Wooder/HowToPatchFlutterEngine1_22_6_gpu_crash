@@ -17,7 +17,7 @@
   ]
   ```
 
-3. `cd to the`engine`-Directory and execute`gclient sync` (this fetches alle required sources and will take about 1 hour)
+3. `cd` to the `engine`-Directory and execute`gclient sync` (this fetches alle required sources and will take about 1 hour)
 
 ## Compiling the Flutter Engine
 
