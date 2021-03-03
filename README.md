@@ -41,6 +41,10 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 
 ## Using the locally compiled, patched Flutter Engine with Flutter
 
-`cd`in the directory of your flutter app and execute `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_unopt"`.
+`cd`in the directory of your flutter app and execute 
+
+1. For a debug build on an iOS Device `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_unopt"`.
+2. For a debug build on an iOS simulator `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_sim_unopt"`.
+3. For a release build: TODO
 
 Now the app starts with the patched engine.
