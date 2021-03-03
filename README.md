@@ -50,11 +50,15 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
    
    (for details on compiling the engine see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
 3. Compiling with ninja: 
-  For debug builds#
+  
+  For debug builds
+  
   * debug build for iOS-devices: `ninja -C out/ios_debug_unopt`
   * host debug (always needed): `ninja -C out/host_debug_unopt`
   * debug build for iOS-simulator: `ninja -C out/ios_debug_sim_unopt`
+  
   For release builds
+  
   * host release build: `ninja -C out/host_release`
   * iOS release build: `ninja -C out/ios_release/`
 4. The out-arguments must be adapted in Step 1 & 2 for optimized build
