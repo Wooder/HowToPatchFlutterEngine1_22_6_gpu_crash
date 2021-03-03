@@ -35,12 +35,12 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 
 ## Compiling the Flutter Engine
 
-1. Prepare the directories: `cd` to the `engine/src`-directory and execute `./flutter/tools/gn --ios --unoptimized` (ios) and `./flutter/tools/gn --unoptimized`(host debug) (for details see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
-2. Compiling with ninja: `ninja -C out/ios_debug_unopt && ninja -C out/host_debug_unopt`
+1. Prepare the directories: `cd` to the `engine/src`-directory and execute `./flutter/tools/gn --ios --unoptimized` (iOS) and `./flutter/tools/gn --unoptimized`(host debug) and ` ./flutter/tools/gn --ios --unoptimized --simulator`(iOS simulator) (for details see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
+2. Compiling with ninja: `ninja -C out/ios_debug_unopt && ninja -C out/host_debug_unopt && ninja -C out/ios_debug_sim_unopt`
 3. The out-arguments must be adapted in Step 1 & 2 for optimized build
 
 ## Using the locally compiled, patched Flutter Engine with Flutter
 
-`cd`in the directory of your flutter app and execute `flutter run --local-engine-src-path="/Users/yourusername/src/safenow/engine/src" --local-engine="ios_debug_unopt"`.
+`cd`in the directory of your flutter app and execute `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_unopt"`.
 
 Now the app starts with the patched engine.
