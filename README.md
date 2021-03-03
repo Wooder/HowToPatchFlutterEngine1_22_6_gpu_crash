@@ -36,8 +36,11 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 ## Compiling the Flutter Engine
 
 1. Prepare the directories: `cd` to the `engine/src`-directory and execute `./flutter/tools/gn --ios --unoptimized` (iOS) and `./flutter/tools/gn --unoptimized`(host debug) and ` ./flutter/tools/gn --ios --unoptimized --simulator`(iOS simulator) (for details see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
-2. Compiling with ninja: `ninja -C out/ios_debug_unopt && ninja -C out/host_debug_unopt && ninja -C out/ios_debug_sim_unopt`
-3. The out-arguments must be adapted in Step 1 & 2 for optimized build
+2. Compiling with ninja: 
+  * debug build for iOS-devices: `ninja -C out/ios_debug_unopt`
+  * host debug (always needed): `ninja -C out/host_debug_unopt`
+  * debug build for iOS-simulator: `ninja -C out/ios_debug_sim_unopt`
+4. The out-arguments must be adapted in Step 1 & 2 for optimized build
 
 ## Using the locally compiled, patched Flutter Engine with Flutter
 
