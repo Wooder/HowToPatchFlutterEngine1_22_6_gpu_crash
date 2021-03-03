@@ -35,11 +35,28 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 
 ## Compiling the Flutter Engine
 
-1. Prepare the directories: `cd` to the `engine/src`-directory and execute `./flutter/tools/gn --ios --unoptimized` (iOS) and `./flutter/tools/gn --unoptimized`(host debug) and ` ./flutter/tools/gn --ios --unoptimized --simulator`(iOS simulator) (for details see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
-2. Compiling with ninja: 
+1. Prepare the directories: `cd` to the `engine/src`-directory and execute 
+   
+   For debug builds
+   
+   * iOS debug for devices `./flutter/tools/gn --ios --unoptimized`
+   * host debug `./flutter/tools/gn --unoptimized`
+   * iOS debug for simulator ` ./flutter/tools/gn --ios --unoptimized --simulator`(iOS simulator)
+   
+   For release builds
+   
+   * iOS release build: ./flutter/tools/gn --ios --runtime-mode=release
+   * host release build: ./flutter/tools/gn --runtime-mode=release  
+   
+   (for details on compiling the engine see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
+3. Compiling with ninja: 
+  For debug builds#
   * debug build for iOS-devices: `ninja -C out/ios_debug_unopt`
   * host debug (always needed): `ninja -C out/host_debug_unopt`
   * debug build for iOS-simulator: `ninja -C out/ios_debug_sim_unopt`
+  For release builds
+  * host release build: `ninja -C out/host_release`
+  * iOS release build: `ninja -C out/ios_release/`
 4. The out-arguments must be adapted in Step 1 & 2 for optimized build
 
 ## Using the locally compiled, patched Flutter Engine with Flutter
