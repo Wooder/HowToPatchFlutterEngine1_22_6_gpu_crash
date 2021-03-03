@@ -45,8 +45,8 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
    
    For release builds
    
-   * iOS release build: ./flutter/tools/gn --ios --runtime-mode=release
-   * host release build: ./flutter/tools/gn --runtime-mode=release  
+   * iOS release build: `./flutter/tools/gn --ios --runtime-mode=release --unoptimized`
+   * host release build: `./flutter/tools/gn --runtime-mode=release --unoptimized` 
    
    (for details on compiling the engine see: <https://github.com/flutter/flutter/wiki/Compiling-the-engine>)
 3. Compiling with ninja: 
@@ -69,6 +69,6 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 
 1. For a debug build on an iOS Device `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_unopt"`.
 2. For a debug build on an iOS simulator `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_sim_unopt"`.
-3. For a release build:`flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="--local-engine="ios_release"`. 
+3. For a release build:`flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="--local-engine="ios_release_unopt"`. 
 
 Now the app starts with the patched engine.
