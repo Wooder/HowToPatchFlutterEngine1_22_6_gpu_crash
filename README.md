@@ -117,7 +117,7 @@ post_install do |installer|
 4. `cd` into `~/src/engine/src/out/ios_release_unopt/clang_x64` (the directory of your self built flutter engine) and
    `cp gen_snapshot gen_snapshot_arm64` - Xcode expects the `gen_snapshot_arm64` however after compiling the file is named `gen_snapshot`(but is arm64)
 4. Change to the source directory of your flutter app in which you want to run `flutter build ios ..."`
-5. `flutter clean``
+5. `flutter clean`
 6. `flutter build ios --local-engine-src-path="/Users/xxx/src/engine/src" --local-engine="ios_release_unopt"`
 7. Now a error shows up but Generated.xcconfig was created and `pod install` was executed (Have a look at `Generated.xcconfig` inside Xcode)
 8. Building the app in Xcode: Open the .xcworspace of your app with Xcode and select "Any iOS Device (arm64)" as target
