@@ -95,3 +95,27 @@ you will likely get this error message:
  This is caused by Issue https://github.com/flutter/flutter/issues/51989  which was fixed with Pull Request https://github.com/flutter/flutter/pull/73072. Unfortunately, the fix is not yet included in the flutter tools for stable 1.22.6, so we need a workaround.
 
 ## The workaround
+
+The workarround is to build the app only for arm64 (all 64 bit iPhones better than iPhone 5/ iPhone 5c).
+
+1. Add the following post install hook to your Podfile:
+ ```
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+
+  installer.pods_project.targets.each do |target|
+     target.build_configurations.each do |config|
+       config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+     end
+  end
+ ```
+2. In Xcode open your build settings and set "Build Active Architecture Only" to YES for Debug/Profile/Release builds
+3. `cd` into `~/src/engine/src/out/ios_release_unopt/clang_x64` (the directory of your self built flutter engine) and
+   `cp gen_snapshot gen_snapshot_arm64` - Xcode expects the `gen_snapshot_arm64` however after compiling the file is named `gen_snapshot`(but is arm64)
+4. change to the directory in which you want to run `flutter build ios ..."`
+5. `flutter clean``
+6. `flutter build ios --local-engine-src-path="/Users/xxx/src/engine/src" --local-engine="ios_release_unopt"`
+7. Now a error shows up but Generated.xcconfig was created (Have a look at it inside Xcode)
+8. 
