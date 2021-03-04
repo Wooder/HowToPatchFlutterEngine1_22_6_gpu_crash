@@ -72,3 +72,26 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 3. For a release build:`flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="--local-engine="ios_release_unopt"`. 
 
 Now the app starts with the patched engine.
+
+# Problems with release build
+When you execute the following command (to build a release of the app) 
+
+`flutter build ios --local-engine-src-path="/Users/xxx/src/engine/src" --local-engine="ios_release_unopt"`
+
+you will likely get this error message:
+
+ ```
+ /Users/xxx/source_code/flutter_user/ios/Flutter/Flutter.framework/Flutter, building for iOS-armv7 but attempting to link with file built for iOS-arm64
+    Undefined symbols for architecture armv7:
+      "_OBJC_CLASS_$_FlutterStandardMessageCodec", referenced from:
+          objc-class-ref in FlutterWebView.o
+      "_OBJC_CLASS_$_FlutterError", referenced from:
+          objc-class-ref in FLTWKNavigationDelegate.o
+          objc-class-ref in FlutterWebView.o
+      "_FlutterMethodNotImplemented", referenced from:
+          -[FLTCookieManager handleMethodCall:result:] in FLTCookieManager.o
+          ___83-[FLTWKNavigationDelegate
+ ```
+ This is caused by Issue https://github.com/flutter/flutter/issues/51989  which was fixed with Pull Request https://github.com/flutter/flutter/pull/73072. Unfortunately, the fix is not yet included in the flutter tools for stable 1.22.6, so we need a workaround.
+
+## The workaround
