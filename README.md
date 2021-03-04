@@ -110,6 +110,7 @@ post_install do |installer|
        config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
      end
   end
+ end 
  ```
 2. In Xcode open your build settings and set "Build Active Architecture Only" to YES for Debug/Profile/Release builds
 3. `cd` into `~/src/engine/src/out/ios_release_unopt/clang_x64` (the directory of your self built flutter engine) and
