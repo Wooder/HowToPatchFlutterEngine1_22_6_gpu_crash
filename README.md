@@ -59,8 +59,8 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
   
   For release builds
   
-  * host release build: `ninja -C out/host_release`
-  * iOS release build: `ninja -C out/ios_release/`
+  * host release build: `ninja -C out/host_release_unopt`
+  * iOS release build: `ninja -C out/ios_release_unopt`
 4. The out-arguments must be adapted in Step 1 & 2 for optimized build
 
 ## Using the locally compiled, patched Flutter Engine with Flutter
