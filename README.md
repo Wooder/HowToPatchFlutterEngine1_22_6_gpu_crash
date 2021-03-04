@@ -98,7 +98,7 @@ you will likely get this error message:
 
 The workarround is to build the app only for arm64 (all 64 bit iPhones better than iPhone 5/ iPhone 5c).
 
-1. Add the following post install hook to your Podfile (mybe merge it with an existing post install hook - only one hook is allowed):
+1. Add the following post install hook to your Podfile (maybe merge it with an existing post install hook - only one hook is allowed):
  ```
 post_install do |installer|
   installer.pods_project.targets.each do |target|
