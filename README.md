@@ -113,10 +113,14 @@ post_install do |installer|
  end 
  ```
 2. In Xcode open your build settings and set "Build Active Architecture Only" to YES for Debug/Profile/Release builds
-3. `cd` into `~/src/engine/src/out/ios_release_unopt/clang_x64` (the directory of your self built flutter engine) and
+3. In Xcode open your build settings and set architectures the following way:  Remove "$standard_archs" and add "arm64"
+4. `cd` into `~/src/engine/src/out/ios_release_unopt/clang_x64` (the directory of your self built flutter engine) and
    `cp gen_snapshot gen_snapshot_arm64` - Xcode expects the `gen_snapshot_arm64` however after compiling the file is named `gen_snapshot`(but is arm64)
-4. change to the directory in which you want to run `flutter build ios ..."`
+4. Change to the source directory of your flutter app in which you want to run `flutter build ios ..."`
 5. `flutter clean``
 6. `flutter build ios --local-engine-src-path="/Users/xxx/src/engine/src" --local-engine="ios_release_unopt"`
 7. Now a error shows up but Generated.xcconfig was created (Have a look at it inside Xcode)
-8. 
+8. Building the app in Xcode: Open the .xcworspace of your app with Xcode and select "Any iOS Device (arm64)" as target
+9. In the Xcode main menu: Product -> Archive
+10. Do NOT update architectures if Xcode asks to do so
+11. The IPA for your app should now be created successfully
