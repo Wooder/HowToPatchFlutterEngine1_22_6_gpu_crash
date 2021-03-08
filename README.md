@@ -17,7 +17,7 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
 ## Prepare the source code
 
 1. install `depot_tools` (<http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up>) (In case of problems: the setup of the Flutter Engine Dev environment is explained here: <https://github.com/flutter/flutter/wiki/Setting-up-the-Engine-development-environment>)
-2. In this directory create a file named `.gclient` with the following content (the branch used is based on the Flutter engine used in 1_22_6 (engine revision 2f0af37152) on which the bugfix from gaaclarke (from commit 90c8015280344f1faf0127599351e264d4d9a9d7) was manually transferred. It also contains a bug fix in the DEP file (siehe <https://github.com/flutter/flutter/issues/72108#issuecomment-744065093>)):
+2. `mkdir engine` in your desired root directory. In this directory create a file named `.gclient` with the following content (the branch used is based on the Flutter engine used in 1_22_6 (engine revision 2f0af37152) on which the bugfix from gaaclarke (from commit 90c8015280344f1faf0127599351e264d4d9a9d7) was manually transferred. It also contains a bug fix in the DEP file (siehe <https://github.com/flutter/flutter/issues/72108#issuecomment-744065093>)):
 
   ```
   solutions = [ {
@@ -30,7 +30,9 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
   },
   ]
   ```
-
+  There is also a branch with GPU completely disabled - if you want to use it use the following url in the `.gclient`-file:
+  `"url": "git@github.com:Wooder/engine.git@flutter_engine_for_stable_1_22_6_with_gpu_always_disabled"`
+  
 3. `cd` to the `engine`-Directory and execute`gclient sync` (this fetches alle required sources and will take about 1 hour)
 
 ## Compiling the Flutter Engine
