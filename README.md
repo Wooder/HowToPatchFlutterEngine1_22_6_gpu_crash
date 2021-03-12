@@ -6,11 +6,14 @@ This version of the engine potentially resolves the following issues (not yet co
 - https://github.com/flutter/flutter/issues/74226
 - https://github.com/flutter/flutter/issues/69102
 
-There is a merge request that fixes the problem on the master branch (https://github.com/flutter/engine/pull/24503).
+There is a pull request that potentially fixes the problem on the master branch (https://github.com/flutter/engine/pull/24503).
 I transferred this fix manually for the flutter engine for 1.22.6
+Unfortunately this pull request didn'fix the problem, but there was a second one (https://github.com/flutter/engine/pull/24958) which amends pull request 24503)
+I also transferred this fix manually for the flutter engine for 1.22.6.
 
-The changes I made (2 commits on Mar 2, 2021) can be seen here:
+The changes I made (2 commits on Mar 2, 2021 (backport of pull request 24503) and 1 commits on Mar 12, 2021 (backport of pull request 24958)) can be seen here:
 https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_gpu_disable_sync_switch_via_appstate_fix
+
 
 # Compiling the patched Flutter engine for Flutter stable_1_22_6 for iOS
 
@@ -30,9 +33,7 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
   },
   ]
   ```
-  There is also a branch with GPU completely disabled - if you want to use it use the following url in the `.gclient`-file:
-  `"url": "git@github.com:Wooder/engine.git@flutter_engine_for_stable_1_22_6_with_gpu_always_disabled"`
-  
+ 
 3. `cd` to the `engine`-Directory and execute`gclient sync` (this fetches alle required sources and will take about 1 hour)
 
 ## Compiling the Flutter Engine
