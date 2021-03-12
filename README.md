@@ -7,8 +7,8 @@ This version of the engine potentially resolves the following issues (not yet co
 - https://github.com/flutter/flutter/issues/69102
 
 There is a pull request that potentially fixes the problem on the master branch (https://github.com/flutter/engine/pull/24503).
-I transferred this fix manually for the flutter engine for 1.22.6
-Unfortunately this pull request didn'fix the problem, but there was a second one (https://github.com/flutter/engine/pull/24958) which amends pull request 24503)
+I transferred this fix manually for the flutter engine for 1.22.6.
+Unfortunately this pull request didn'fix the problem, but there was a second one (https://github.com/flutter/engine/pull/24958) which amends pull request 24503).
 I also transferred this fix manually for the flutter engine for 1.22.6.
 
 The changes I made (2 commits on Mar 2, 2021 (backport of pull request 24503) and 1 commits on Mar 12, 2021 (backport of pull request 24958)) can be seen here:
