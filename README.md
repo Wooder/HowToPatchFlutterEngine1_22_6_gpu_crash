@@ -33,10 +33,26 @@ https://github.com/Wooder/engine/commits/flutter_engine_for_stable_1_22_6_with_g
   },
   ]
   ```
-  
-Theres another patched flutter engine based on commit 40441def692f444660a11e20fac37af9050245ab - The branch is git@github.com:Wooder/engine.git@flutter_engine_at_40441def6_with_PR24958_PR24503_backport - I've backported https://github.com/flutter/engine/pull/24958 and https://github.com/flutter/engine/pull/24503  on this branch -  I did it because the solution above lead to other crashes: see https://github.com/flutter/flutter/issues/76068#issuecomment-799582145
-  If you want to give it a try use the follwing `.gclient` file:
-  
+
+**The following explantion is just for documentation purposes - its best to go to step 3 and continue:**
+
+Theres another patched flutter engine based on commit 40441def692f444660a11e20fac37af9050245ab - The branch is git@github.com:Wooder/engine.git@flutter_engine_at_40441def6_with_PR24958_PR24503_backport - I've backported https://github.com/flutter/engine/pull/24958 and https://github.com/flutter/engine/pull/24503  on this branch -  I did it because the solution above lead to other crashes: see https://github.com/flutter/flutter/issues/76068#issuecomment-799582145 and gaaclarke suggested to try this (https://github.com/flutter/flutter/issues/76068#issuecomment-799582145)
+
+If you want to give it a try use the follwing `.gclient` file:
+
+Unfortunately this solution does not compile in Xcode - `flutter build ...` ends up with the following error:
+
+```Oops; flutter has exited unexpectedly: "NoSuchMethodError: The method 'matchAsPrefix' was called on null.
+    Receiver: null
+    Tried calling: matchAsPrefix("ERROR: FormatException: Could not find an option named \"bytecode-options\".", 0)".
+    Oops; flutter has exited unexpectedly: "NoSuchMethodError: The method 'matchAsPrefix' was called on null.
+    Receiver: null
+    Tried calling: matchAsPrefix("ERROR: FormatException: Could not find an option named \"bytecode-options\".", 0)".
+    Oops; flutter has exited unexpectedly: "NoSuchMethodError: The method 'matchAsPrefix' was called on null.
+    Receiver: null
+```
+The problem seems to be that the flutter engine is too new and that's why this problem arises (tl;tr; "Your local engine and flutter checkout are out of sync, i.e. bytecode-options was removed as a compiler argument but your tool checkout is still passing that into the engine."): https://github.com/flutter/flutter/issues/75357
+
   ```
  solutions = [ {
 "managed": False,
