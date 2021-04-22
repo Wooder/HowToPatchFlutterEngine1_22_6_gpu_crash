@@ -103,7 +103,7 @@ The problem seems to be that the flutter engine is too new and that's why this p
 
 1. For a debug build on an iOS Device `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_unopt"`.
 2. For a debug build on an iOS simulator `flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_debug_sim_unopt"`.
-3. For a release build:`flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="--local-engine="ios_release_unopt"`. 
+3. For a release build:`flutter run --local-engine-src-path="/Users/yourusername/src/engine/src" --local-engine="ios_release_unopt"`. 
 
 Now the app starts with the patched engine.
 
